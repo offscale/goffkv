@@ -1,4 +1,6 @@
-language: cpp
+language: go
+go:
+- 1.14.x
 
 git:
   depth: false
@@ -11,7 +13,6 @@ cache:
 matrix:
   include:
     - os: linux
-      sudo: true
       env:
         - VCPKG_TRIPLET="x64-linux"
         - MATRIX_EVAL="export CC=gcc-8 && export CXX=g++-8"
@@ -36,7 +37,6 @@ matrix:
         - SYSTEM_TRIPLET="darwin"
         - PREFERRED_ARCHIVE_EXTENSION="zip"
         - LIBOFFKV_CMAKE_FLAGS=""
-      sudo: true
     # - os: windows
     #   env:
     #     - VCPKG_TRIPLET=x64-windows
